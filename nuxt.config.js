@@ -1,8 +1,9 @@
 const webpack = require('webpack')
 const config = require('./config')
+const path = require('path')
 module.exports = {
   head: {
-    title: 'NUXT CMS',
+    title: 'NUXT-CMS',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1, viewport-fit=cover' },
@@ -80,14 +81,14 @@ module.exports = {
       })
     ],
     extend (config, ctx) {
-      // console.log('webpack config:', config)
-      // if (ctx.isClient) {
-      //   config.entry['polyfill'] = ['babel-polyfill']
+      if (ctx.isClient) {
+        config.entry['polyfill'] = ['babel-polyfill']
         // 添加 alias 配置
-        // Object.assign(config.resolve.alias, {
-        //   'utils': path.resolve(__dirname, 'utils')
-        // })
-      // }
+        Object.assign(config.resolve.alias, {
+          'utils': path.resolve(__dirname, 'utils')
+        })
+      }
+      // console.log('webpack config:', config)
     }
   },
   env: {

@@ -7,7 +7,7 @@ export const scrollMoreData = {
 
       console.log('scrollTop %o',scrollTop)
       console.log('containerHeight %o',containerHeight)
-      if(scrollTop > containerHeight) this.loadMore()
+      if(scrollTop + 200 > containerHeight) this.loadMore()
     },200)
 
     window.addEventListener('scroll',this.throttleLoad)

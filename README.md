@@ -6,12 +6,14 @@
 
 > 包含前端框架elementUI和手机框架MintUI
 
+> 本架构使用Babel6编译
+
 ``` 
 # 开发模式
 yarn 
 yarn dev
 
-# 部署UAT环境
+# 部署测试环境
 yarn build:uat
 pm2 start --env uat
 

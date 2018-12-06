@@ -1,6 +1,6 @@
 module.exports = {
   apps : [{
-    name      : 'ipms',
+    name      : 'nuxt-cms',
     script    : 'build/main.js',
     env: {
       NODE_ENV: 'development',

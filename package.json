@@ -5,18 +5,16 @@
   "author": "paddy <patricknieh@qq.com>",
   "scripts": {
     "dev": "cross-env __ENV=development nodemon -w ./server -w ./start.js -w ./nuxt.config.js -w ./config.js --exec node ./start.js",
-    "build:development": "cross-env __ENV=development nuxt build",
-    "build:uat": "cross-env __ENV=uat nuxt build",
-    "build:production": "cross-env __ENV=production nuxt build"
+    "build:development": "cross-env __ENV=development nuxt build && backpack build",
+    "build:uat": "cross-env __ENV=uat nuxt build && backpack build",
+    "build:production": "cross-env __ENV=production nuxt build && backpack build"
   },
   "dependencies": {
     "@koa/cors": "^2.2.2",
     "@nuxtjs/axios": "^5.3.1",
     "@nuxtjs/proxy": "^1.2.4",
-    "@nuxtjs/pwa": "latest",
-    "async": "^2.6.1",
-    "async-es": "^2.6.1",
-    "babel-polyfill": "^6.26.0",
+    "@nuxtjs/pwa": "^2.5.0",
+    "backpack-core": "^0.3.0",
     "cross-env": "^5.0.1",
     "element-ui": "^2.4.6",
     "gt3-sdk": "^2.0.0",
@@ -31,7 +29,7 @@
     "mongoose": "^5.0.1",
     "node-sass": "^4.9.3",
     "nodemailer": "^4.6.7",
-    "nuxt": "latest",
+    "nuxt": "^1.4.2",
     "postcss-px2rem": "^0.3.0",
     "promise-async": "^0.2.0",
     "sass-loader": "^7.1.0",
