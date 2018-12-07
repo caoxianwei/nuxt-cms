@@ -7,6 +7,26 @@ let num = {
       return null;
     }
   },
+  /**
+   * @param goods 奖品池，如：['一等奖'，'二等奖']
+   * @param odds 概率数组，如：[0.1.0.9]
+   * @returns {*}
+   */
+  randomGoods: function(goods,odds){
+    let sum = 0,
+      factor = 0,
+      random = Math.random();
+
+    for(let i = odds.length - 1; i >= 0; i--) {
+      sum += odds[i]; // 统计概率总和
+    };
+    random *= sum; // 生成概率随机数
+    for(let i = odds.length - 1; i >= 0; i--) {
+      factor += odds[i];
+      if(random <= factor) return goods[i];
+    };
+    return null;
+  },
   randomCode:function (len) {
     var code = ''
     const random = [0,1,2,3,4,5,6,7,8,9]
