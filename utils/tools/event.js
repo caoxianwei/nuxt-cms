@@ -49,7 +49,8 @@ let event = {
       target2Left = target2.offsetLeft,
       target2Right = target2.offsetLeft + target2.offsetWidth;
     if (target1Foot > target2Top && target1Right > target2Left && target1Top < target2Foot && target1Left < target2Right) callback()
-  }
+  },
+
 }
 
 export default event

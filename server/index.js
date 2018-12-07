@@ -7,7 +7,7 @@ import session from 'koa-session'
 import cors from '@koa/cors'
 import path from 'path'
 
-import N from '../utils/tools/number'
+import N from '../utils/tools/time'
 
 //routes
 import api from './routes'

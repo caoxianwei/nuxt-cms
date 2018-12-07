@@ -8,6 +8,7 @@ let num = {
     }
   },
   /**
+   * 抽奖概率
    * @param goods 奖品池，如：['一等奖'，'二等奖']
    * @param odds 概率数组，如：[0.1.0.9]
    * @returns {*}
@@ -27,6 +28,7 @@ let num = {
     };
     return null;
   },
+  //随机验证码
   randomCode:function (len) {
     var code = ''
     const random = [0,1,2,3,4,5,6,7,8,9]
@@ -194,6 +196,7 @@ let num = {
     }
     return chineseStr;
   },
+  //数字单位
   numberUnit: function (num) {
     switch (true) {
       case num > 999999999:
@@ -216,38 +219,6 @@ let num = {
         break
       default:
         return num
-    }
-  },
-  getMillisecond:function (num, type) {
-    switch (type) {
-      case 'day':
-        return num * 24 * 60 * 60 * 1000
-        break
-      case 'hour':
-        return num * 60 * 60 * 1000
-        break
-      case 'minute':
-        return num * 60 * 1000
-        break
-      case 'second':
-        return num * 1000
-        break
-    }
-  },
-  formatMillisecond:function (num, to) {
-    switch (to) {
-      case 'day':
-        return num / 24 / 60 / 60 / 1000
-        break
-      case 'hour':
-        return num / 60 / 60 / 1000
-        break
-      case 'minute':
-        return num / 60 / 1000
-        break
-      case 'second':
-        return num / 1000
-        break
     }
   }
 }
