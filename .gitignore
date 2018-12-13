@@ -16,3 +16,4 @@ sw.*
 # server
 uploads
 config.js
+ecosystem.config.js
