@@ -14,5 +14,17 @@ module.exports = {
       NODE_ENV: 'production',
       __ENV: 'production'
     }
-  }]
+  }],
+  deploy: {
+    production: {
+      user: "root",
+      host: ["120.25.159.24"],
+      ref: "origin/master",
+      ssh_options: "StrictHostKeyChecking=no",
+      repo: "git@github.com:patricknieh/nuxt-cms.git",
+      path: "/git",
+      "pre-deploy": "git fetch --all",
+      "post-deploy": "yarn && yarn build:production && pm2 startOrRestart ecosystem.config.js --env production"
+    }
+  }
 }
