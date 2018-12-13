@@ -24,7 +24,7 @@ module.exports = {
       repo: "git@github.com:patricknieh/nuxt-cms.git",
       path: "/git/nuxt-cms",
       "pre-deploy": "git fetch --all",
-      "post-deploy": "yarn --ignore-engines && yarn build:production && pm2 startOrRestart ecosystem.config.js --env production"
+      "post-deploy": "yarn --ignore-engines && yarn build:production --ignore-engines && pm2 startOrRestart ecosystem.config.js --env production"
     }
   }
 }
