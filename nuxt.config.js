@@ -19,6 +19,7 @@ module.exports = {
       { rel: 'apple-touch-icon', href: '/icon.png' },
     ],
     script: [
+      { src: '/cnzz.js'},
       { src: '//cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'},
       { src: '/gt.js'}
     ]
