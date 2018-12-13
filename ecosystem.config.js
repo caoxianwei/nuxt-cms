@@ -22,7 +22,7 @@ module.exports = {
       ref: "origin/master",
       ssh_options: "StrictHostKeyChecking=no",
       repo: "git@github.com:patricknieh/nuxt-cms.git",
-      path: "/git",
+      path: "/git/nuxt-cms",
       "pre-deploy": "git fetch --all",
       "post-deploy": "yarn && yarn build:production && pm2 startOrRestart ecosystem.config.js --env production"
     }
