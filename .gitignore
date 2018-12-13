@@ -5,15 +5,14 @@ node_modules
 npm-debug.log
 
 # Nuxt build
-# .nuxt
+.nuxt
 
 # Nuxt generate
 dist
-# build
+build
 .idea
 sw.*
 
 # server
 uploads
 config.js
-ecosystem.config.js
