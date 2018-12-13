@@ -23,6 +23,7 @@ module.exports = {
       ssh_options: "StrictHostKeyChecking=no",
       repo: "git@github.com:patricknieh/nuxt-cms.git",
       path: "/git/nuxt-cms",
+      "pre-deploy": "git fetch --all",
       "post-deploy": "pm2 startOrRestart ecosystem.config.js --env production"
     }
   }
