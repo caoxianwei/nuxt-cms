@@ -43,6 +43,31 @@ let time = {
         this.nextTime = now + Math.random()*speed
       }
     }, 300)
+  },
+  //倒计时
+  countDown(seconds,callback) {
+    let timer = null;
+    timer = setInterval(function () {
+      let day = 0,
+        hour = 0,
+        minute = 0,
+        second = 0;
+      if (seconds > 0) {
+        day = Math.floor(seconds / (60 * 60 * 24));
+        hour = Math.floor(seconds / (60 * 60)) - (day * 24);
+        minute = Math.floor(seconds / 60) - (day * 24 * 60) - (hour * 60);
+        second = Math.floor(seconds) - (day * 24 * 60 * 60) - (hour * 60 * 60) - (minute * 60);
+      }
+      if (day <= 9) day = '0' + day;
+      if (hour <= 9) hour = '0' + hour;
+      if (minute <= 9) minute = '0' + minute;
+      if (second <= 9) second = '0' + second;
+
+      callback({day,hour,minute,second})
+      seconds--
+
+      if (seconds < 0) clearInterval(timer)
+    }, 1000);
   }
 }
 
