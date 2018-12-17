@@ -301,7 +301,7 @@ console.log('env:', process.env.__ENV);
 module.exports = {
   secret: 'nuxt-koa-mongoose-pwa',
   app: {
-    domain: env === 'production' ? 'http://120.25.159.24:3000' : env === 'uat' ? 'http://120.25.159.24:3000' : 'http://localhost:3000',
+    domain: env === 'production' ? 'http://nuxtcms.com' : env === 'uat' ? 'http://nuxtcms-uat.com' : 'http://localhost:3000',
     host: '0.0.0.0',
     port: 3000
   },
@@ -1265,6 +1265,31 @@ var time = {
         _this.nextTime = now + Math.random() * speed;
       }
     }, 300);
+  },
+  //倒计时
+  countDown: function countDown(seconds, callback) {
+    var timer = null;
+    timer = setInterval(function () {
+      var day = 0,
+          hour = 0,
+          minute = 0,
+          second = 0;
+      if (seconds > 0) {
+        day = Math.floor(seconds / (60 * 60 * 24));
+        hour = Math.floor(seconds / (60 * 60)) - day * 24;
+        minute = Math.floor(seconds / 60) - day * 24 * 60 - hour * 60;
+        second = Math.floor(seconds) - day * 24 * 60 * 60 - hour * 60 * 60 - minute * 60;
+      }
+      if (day <= 9) day = '0' + day;
+      if (hour <= 9) hour = '0' + hour;
+      if (minute <= 9) minute = '0' + minute;
+      if (second <= 9) second = '0' + second;
+
+      callback({ day: day, hour: hour, minute: minute, second: second });
+      seconds--;
+
+      if (seconds < 0) clearInterval(timer);
+    }, 1000);
   }
 };
 
